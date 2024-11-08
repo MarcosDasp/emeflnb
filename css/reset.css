@@ -1,0 +1,24 @@
+/* reset.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    transition: all 0.4s ease;
+    scroll-behavior: smooth;
+    user-select: none;
+  }
+  
+  /* Remover scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  :root {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --nav-color-secundary: #2425265e;
+    --side-nav: #242526;
+    --text-color: #CCC;
+  }
+  

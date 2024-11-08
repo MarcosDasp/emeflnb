@@ -1,0 +1,315 @@
+@import 'reset.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* header */
+header{
+   width: 100%;
+   background-color: var(--nav-color-secundary);
+   position: absolute;
+   z-index: 9999;
+   top: 0;
+   color: #fff;
+   transition: background-color 0.4s ease-in-out;  
+}
+
+header.scrolled{
+   background-color: var(--nav-color);
+}
+
+.header-bar {
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 0 30px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 40px;
+ }
+ 
+.contact-info {
+   display: flex;
+   
+}
+
+ .contact-info span {
+   margin-right: 20px;
+   font-size: 14px;
+ }
+
+ .social-icons a {
+   margin-left: 15px;
+   text-decoration: none;
+   font-size: 20px;
+   color: #fff;
+ }
+ 
+ .social-icons a:hover {
+   text-decoration: underline;
+ }
+ 
+ @media (max-width: 768px) {
+   header {
+       height: auto; /* Ajusta altura em telas menores */
+   }
+ 
+   .header-bar{
+       justify-content: center;
+   }
+
+   .contact-info{
+       display: none;
+   } 
+
+   .social-icons {
+     margin: 5px 0;
+   }
+ 
+   .social-icons a {
+     margin-left: 0;
+     margin-right: 10px;
+   }
+ }
+
+
+/* Navegação */
+nav {
+   position: sticky;
+   top: 0;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0);
+   transition: background-color 0.4s ease-in-out;
+   z-index: 9999;
+   margin-top: 40px;
+    /* border-bottom: 1px solid #393838; */
+}
+
+nav.scrolled{
+    background-color: var(--nav-color);
+}
+
+nav .navLogo img{
+    margin-top: 8px;
+    height: 60px;
+}
+
+nav .nav-bar {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle {
+    display: none;
+}
+
+.nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li {
+    list-style: none;
+    position: relative;
+    margin: 0 5px;
+}
+
+/* menu dropdown */
+
+   .nav-links li .dropdown {
+       position: absolute;
+       left: 0;
+       top: 150%;
+       background-color: var(--side-nav);
+       list-style: none;
+       padding: 10px 0;
+       display: none;
+       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .nav-links li .dropdown li {
+       padding: 0 25px;
+   }
+
+   .nav-links li .dropdown li:hover {
+       background-color: var(--body-color);
+   }
+
+   .nav-links li .dropdown li a {
+       min-width: 75px;
+       color: var(--text-color);
+       font-size: 15px;
+       text-decoration: none;
+       padding: 10px 0;
+       display: block;
+   }
+
+   .nav-links li:hover .dropdown li a::before {
+       opacity: 0;
+   }
+
+   /* Exibir o submenu ao passar o mouse */
+   .nav-links li:hover .dropdown {
+       display: block;
+   }
+
+   /* Estilo responsivo para dropdown no mobile */
+   @media (max-width: 790px) {
+       
+       .nav-links li:hover .dropdown {
+           display: none;
+       }
+   }
+
+.nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+/* Responsividade da navegação */
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu {
+        left: 0;
+    }
+
+    .menu .logo-toggle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-toggle .sidebarClose {
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links {
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a {
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+
+ /* Seção Hero */
+ .hero {
+   background: url('img/hero.jpeg') no-repeat center center;
+   background-size: cover;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: relative;
+   text-align: center;
+   color: white;
+   height: 70dvh;
+   margin-top: -120px; 
+}
+
+.hero::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.65); /* Escurece a imagem de fundo para melhor legibilidade do texto */
+   z-index: 1;
+}
+
+.hero-content {
+   position: relative;
+   z-index: 2;
+}
+
+.hero-content h1 {
+   font-size: 4em;
+   margin-bottom: 0.5em;
+   font-weight: 700;
+}
+
+.hero-content p {
+   font-size: 1.5em;
+}
+
+
+@media (max-width: 790px) {
+   .hero {
+       height:70dvh;
+   }
+
+   .hero-content {
+       margin: 0px 20px;
+   }
+
+   .hero-content h1 {
+       font-size: 2.2em;
+   }
+}
+
+section{
+   height: 90dvh;
+}
