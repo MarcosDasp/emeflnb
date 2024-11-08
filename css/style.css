@@ -257,7 +257,7 @@ nav .nav-bar .logo a {
 
  /* Seção Hero */
  .hero {
-   background: url('/img/hero.jpeg') no-repeat center center;
+   background: url('img/hero.jpeg') no-repeat center center;
    background-size: cover;
    display: flex;
    align-items: center;
